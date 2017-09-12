@@ -1,0 +1,22 @@
+body,textarea,input,button,select,keygen,legend {
+    font: 300 1em/1.8 "PingFang SC","Lantinghei SC","Microsoft Yahei","Hiragino Sans GB","Microsoft Sans Serif","WenQuanYi Micro Hei",sans;
+    color: $base-txt-color;
+    outline: 0;
+
+    //-webkit-font-smoothing: antialiased;
+    //-webkit-text-size-adjust: 100%;
+    //-ms-text-size-adjust: 100%;
+    //text-rendering: optimizelegibility;
+}
+
+a{
+    display: inline-block;
+    color: $base-txt-color;
+    //&:hover{
+    //    color:darken($base-txt-color,10%);
+    //}
+    //&:hover,&:visited,&:focus{
+    //    text-decoration: underline;
+    //    transition:color .2s ease;
+    //}
+}

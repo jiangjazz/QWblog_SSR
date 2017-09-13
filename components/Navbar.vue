@@ -2,12 +2,12 @@
   <div class="m-navbar f-cb">
     <div class="g-box">
       <div class="m-navbar-logo">
-        <a href="/index.html" title="Aotu.io">Aotu.io</a>
+        <a href="/" title="qteam">qteam.cc</a>
       </div>
       <div class="m-navbar-nav">
         <ul>
           <li>
-            <a href="#">首页</a>
+            <a href="/">首页</a>
           </li>
           <li>
             <nuxt-link to="/login">网址导航</nuxt-link>

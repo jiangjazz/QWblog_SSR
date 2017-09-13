@@ -1,5 +1,6 @@
 const bodyParser = require('body-parser')
 const session = require('express-session')
+const RedisStore = require('connect-redis')(session)
 const resolve = require('path').resolve
 const isVueRule = (rule) => {
   return rule.test.toString() === '/\\.vue$/'
@@ -15,6 +16,12 @@ const sassResourcesLoader = {
       resolve(__dirname, 'assets/sass/global/main.scss')
     ]
   }
+}
+
+const redisOptions = {
+  host: '127.0.0.1',
+  port: '6379',
+  pass: 'test123'
 }
 
 module.exports = {
@@ -60,6 +67,7 @@ module.exports = {
   },
   css: [
     'element-ui/lib/theme-default/index.css',
+    'github-markdown-css/github-markdown.css',
     { src: '~assets/sass/qwui_base.scss', lang: 'scss' }
   ],
   babel: {
@@ -97,10 +105,11 @@ module.exports = {
     bodyParser.json(),
     // session middleware
     session({
+      store: new RedisStore(redisOptions),
       secret: 'super-secret-key',
-      resave: false,
-      saveUninitialized: false,
-      cookie: { maxAge: 60000 }
+      resave: true,
+      saveUninitialized: true,
+      cookie: { maxAge: 60000 * 5 * 20 }
     }),
     // Api middleware
     // We add /api/login & /api/logout routes

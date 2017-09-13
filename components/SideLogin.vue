@@ -41,13 +41,6 @@
 <script>
   export default {
     name: 'Sideuser',
-    components: {},
-    data () {
-      return {
-        isLogin: false,
-        userinfo: null
-      }
-    },
     methods: {
       logout () {
         let token = localStorage.getItem('access_token')

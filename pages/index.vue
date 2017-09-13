@@ -12,7 +12,6 @@
 </template>
 
 <script>
-import Banner from '~/components/Banner.vue'
 import Category from '~/components/Category.vue'
 import Lists from '~/components/List.vue'
 import Login from '~/components/SideLogin.vue'
@@ -20,7 +19,7 @@ import SubjectSide from '~/components/SideSubject.vue'
 import axios from 'axios'
 export default {
   components: {
-    Banner, Category, Lists, Login, SubjectSide
+    Category, Lists, Login, SubjectSide
   },
   async asyncData (content) {
     if (content.isServer) {

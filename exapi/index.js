@@ -1,11 +1,12 @@
 const express = require('express')
 const request = require('request')
 
-// Create express router
+// 创建express路由
 const router = express.Router()
 
-// Transform req & res to have the same exapi as express
-// So we can use res.status() & res.json()
+// 全局api请求地址
+const apiURL = 'http://admin.qteam.cc/api'
+
 let app = express()
 router.use((req, res, next) => {
   Object.setPrototypeOf(req, app.request)
@@ -17,7 +18,7 @@ router.use((req, res, next) => {
 
 // Add POST - /api/login
 router.post('/login', (req, res) => {
-  request.post({url: 'http://admin.qteam.cc/api/login',
+  request.post({url: `${apiURL}/login`,
     form: {
       email: req.body.email,
       password: req.body.password
@@ -32,7 +33,7 @@ router.post('/login', (req, res) => {
 
 // Add POST - /api/logout
 router.post('/logout', (req, res) => {
-  request.post({url: 'http://admin.qteam.cc/api/logout',
+  request.post({url: `${apiURL}/logout`,
     headers: {
       'Authorization': 'Bearer ' + req.body.token
     }}, (error, response, body) => {
@@ -44,7 +45,7 @@ router.post('/logout', (req, res) => {
   })
 })
 
-// Export the server middleware
+// 导入模块
 module.exports = {
   path: '/exapi',
   handler: router

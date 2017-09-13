@@ -1,7 +1,8 @@
 import Vue from 'vue'
-import axios from 'axios'
+import * as axios from 'axios'
 
 let token = localStorage.getItem('access_token')
+
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 
 axios.interceptors.response.use(response => {

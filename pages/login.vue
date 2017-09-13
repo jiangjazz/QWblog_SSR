@@ -24,9 +24,6 @@
         </div>
       </div>
     </div>
-    <div class="login-modal login-success" v-show="loginSuccess">
-      登录成功
-    </div>
   </div>
 </template>
 
@@ -78,10 +75,10 @@
       loginAc (data) {
         this.btnTxt = '登录中'
         this.btnIsDisable = true
-        this.$http.post('/api/login', data)
+        this.$http.post('/exapi/login', data)
           .then(response => {
             if (response.data.status_code === '200') {
-              localStorage.setItem('access_token', data.access_token)
+              localStorage.setItem('access_token', response.data.access_token)
               this.loginSuccess = true
 
               this.$message({

@@ -14,9 +14,14 @@
   },
   "dependencies": {
     "axios": "^0.16.2",
+    "body-parser": "^1.18.0",
     "element-ui": "^1.4.4",
+    "express": "^4.15.4",
+    "express-session": "^1.15.5",
     "nuxt": "^1.0.0-rc3",
-    "particles.js": "^2.0.0"
+    "particles.js": "^2.0.0",
+    "request": "^2.81.0",
+    "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
     "@nuxtjs/axios": "^4.2.1",

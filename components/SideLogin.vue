@@ -1,11 +1,11 @@
 <template>
   <div class="m-sidelogin">
-    <div class="m-sidebar m-side-userinfo" v-if="isLogin">
+    <div class="m-sidebar m-side-userinfo" v-if="$store.state.isLogin">
       <div class="m-sb-title">用户中心</div>
       <div class="m-sb-list">
         <ul>
           <li>
-            <a href="#">你好，{{userinfo.name}}</a>
+            <a href="#">你好，{{$store.state.userInfo.name}}</a>
           </li>
           <li>
             <a href="#/User"><i class="iconfont icon-yonghu1"></i> 个人主页</a>
@@ -27,10 +27,10 @@
       <div class="m-sb-list">
         <ul>
           <li>
-            <a href="#/login">登录</a>
+            <a href="/login">登录</a>
           </li>
           <li>
-            <a href="#/register">注册</a>
+            <a href="/register">注册</a>
           </li>
         </ul>
       </div>
@@ -48,45 +48,20 @@
         userinfo: null
       }
     },
-    mounted () {
-      this.fetchData()
-    },
-    watch: {
-      '$route': 'fetchData'
-    },
     methods: {
-      fetchData () {
-        let token = localStorage.getItem('access_token')
-        let config = {
-          headers: {'Authorization': 'Bearer ' + token}
-        }
-        if (token && token !== '') {
-          this.$http.get('/api/me', config)
-            .then(response => {
-              if (response.data.status_code === '200') {
-                this.userinfo = response.data.user
-                this.isLogin = true
-              } else {
-                this.isLogin = false
-              }
-            })
-        } else {
-          this.isLogin = false
-        }
-      },
       logout () {
         let token = localStorage.getItem('access_token')
-        let config = {
-          headers: {'Authorization': 'Bearer ' + token}
-        }
-        this.$http.post('/api/logout', {}, config)
+        this.$http.post('/exapi/logout', {
+          token: token
+        })
           .then(response => {
             if (response.data.status_code === '200') {
               this.$message(response.data.message)
               localStorage.setItem('access_token', '')
-              this.isLogin = false
+              this.$store.commit('SET_USERINFO', '')
+              this.$store.commit('SET_LOGIN', false)
             } else {
-              this.isLogin = true
+              this.$store.commit('SET_LOGIN', true)
             }
           })
       }

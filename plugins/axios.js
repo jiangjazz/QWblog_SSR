@@ -3,7 +3,9 @@ import * as axios from 'axios'
 
 let token = localStorage.getItem('access_token')
 
+axios.defaults.baseURL = 'http://jianshu.dev'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
 axios.interceptors.response.use(response => {
   if (response.data.status_code !== '200') {

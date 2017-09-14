@@ -88,18 +88,6 @@ module.exports = {
     '@nuxtjs/axios',
     '@nuxtjs/proxy'
   ],
-  proxy: [
-    [
-      '/api',
-      {
-        target: 'http://jianshu.dev', // api主机
-        changeOrigin: true,
-        pathRewrite: {
-          '^/api': '/api'
-        }
-      }
-    ]
-  ],
   router: {
     middleware: 'auth'
   },

@@ -22,9 +22,6 @@ export default {
     Category, Lists, Login, SubjectSide
   },
   async asyncData (content) {
-    if (content.isServer) {
-      axios.defaults.baseURL = 'http://admin.qteam.cc'
-    }
     let cateData = await axios.get('/api/categories')
     let postData = await axios.get('/api/categories/' + cateData.data.data[0].id + '/posts')
     cateData.data.activeid = cateData.data.data[0].id

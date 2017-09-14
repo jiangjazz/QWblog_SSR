@@ -6,12 +6,12 @@
         <el-upload
           name="avatar"
           class="avatar-uploader"
-          action="/api/users/fileupload"
+          action="http://jianshu.dev/api/users/fileupload"
           :show-file-list="false"
           :headers="token"
           :on-success="handleAvatarSuccess"
           :before-upload="beforeAvatarUpload">
-          <img v-if="avatar" :src="avatar" class="avatar">
+          <img v-if="ruleForm.avatar" :src="ruleForm.avatar" class="avatar">
           <i v-else class="el-icon-plus avatar-uploader-icon"></i>
           <div slot="tip" class="el-upload__tip">只能上传jpg文件，且不超过1m</div>
         </el-upload>
@@ -42,7 +42,8 @@
     async asyncData ({ isServer, params, app, store }) {
       let token = store.state.authUser
       app.$axios.setToken(token, 'Bearer')
-      let {user} = await app.$axios.$get('/me')
+      let {user} = await app.$axios.$get('/api/me')
+      console.log(user)
       return {
         ruleForm: user
       }

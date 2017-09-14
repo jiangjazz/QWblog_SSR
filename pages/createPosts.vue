@@ -22,7 +22,7 @@
           <el-upload
             name="postPic"
             class="avatar-uploader"
-            action="/api/posts/fileupload"
+            action="http://jianshu.dev/api/posts/fileupload"
             :show-file-list="false"
             :headers="token"
             :on-success="handleAvatarSuccess"
@@ -58,7 +58,7 @@
     async asyncData ({ isServer, params, app, store }) {
       let token = store.state.authUser
       app.$axios.setToken(token, 'Bearer')
-      let data = await app.$axios.$get('/posts/postCreate')
+      let data = await app.$axios.$get('/api/posts/postCreate')
       if (data.status_code === '200') {
         return {
           tags: data.data.tags,

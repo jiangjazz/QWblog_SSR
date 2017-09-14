@@ -33,7 +33,9 @@
           </el-upload>
         </el-form-item>
         <el-form-item label="文章内容" prop="content">
+          <no-ssr>
           <markdown-editor :custom-theme="true" preview-class="markdown-body" v-model="ruleForm.content" ref="markdownEditor" :configs="configs"></markdown-editor>
+          </no-ssr>
         </el-form-item>
         <el-form-item label="标签">
           <el-checkbox-group v-model="ruleForm.taglist">
@@ -127,7 +129,7 @@
         return isJPG && isLt1M
       },
       storeData () {
-        let token = null
+        let token = this.$store.state.authUser
         let postData = {
           title: this.ruleForm.title,
           content: this.ruleForm.content,
@@ -135,11 +137,8 @@
           cate_id: this.ruleForm.cateid,
           tags: this.ruleForm.taglist
         }
-        this.$http({
-          method: 'post',
-          url: '/api/posts',
-          headers: {'Authorization': 'Bearer ' + token},
-          data: postData
+        this.$http.post('/api/posts', postData, {
+          headers: {'Authorization': 'Bearer ' + token}
         })
           .then(response => {
             if (response.data.status_code === '200') {

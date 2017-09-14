@@ -1,12 +1,9 @@
 <template>
-  <div class="m-wrap">
+  <div class="m-wrap m-post">
     <Navbar></Navbar>
     <div class="m-details">
-      <div class="g-box">
+      <div class="g-box g-box-960">
         <nuxt/>
-        <div class="warp-right">
-          <SubjectSide></SubjectSide>
-        </div>
       </div>
     </div>
     <Copyright></Copyright>

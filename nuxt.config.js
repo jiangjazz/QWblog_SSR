@@ -81,7 +81,7 @@ module.exports = {
     src: '~plugins/axios',
     ssr: false
   }, {
-    src: '~plugins/markdownEditor',
+    src: '~plugins/VueSimplemde',
     ssr: false
   }],
   modules: [
@@ -92,7 +92,11 @@ module.exports = {
     [
       '/api',
       {
-        target: 'http://admin.qteam.cc' // api主机
+        target: 'http://jianshu.dev', // api主机
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '/api'
+        }
       }
     ]
   ],

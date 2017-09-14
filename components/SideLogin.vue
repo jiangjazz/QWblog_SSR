@@ -8,13 +8,13 @@
             <a href="#">你好，{{$store.state.userInfo.name}}</a>
           </li>
           <li>
-            <a href="#/User"><i class="iconfont icon-yonghu1"></i> 个人主页</a>
+            <a href="/user/info"><i class="iconfont icon-yonghu1"></i> 个人主页</a>
           </li>
           <li>
             <a href="#"><i class="iconfont icon-xiaoxitongzhi"></i> 消息通知</a>
           </li>
           <li>
-            <a href="#/u/settings"><i class="iconfont icon-setting"></i> 设置</a>
+            <a href="/user/settings"><i class="iconfont icon-setting"></i> 设置</a>
           </li>
           <li>
             <a href="javascript:void(0)" @click="logout"><i class="iconfont icon-tuichu-copy"></i> 退出</a>

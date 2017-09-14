@@ -5,7 +5,7 @@ const request = require('request')
 const router = express.Router()
 
 // 全局api请求地址
-const apiURL = 'http://admin.qteam.cc/api'
+const apiURL = 'http://jianshu.dev/api'
 
 let app = express()
 router.use((req, res, next) => {
@@ -24,6 +24,7 @@ router.post('/login', (req, res) => {
       password: req.body.password
     }}, (error, response, body) => {
     if (!error && response.statusCode === 200) {
+      req.session.userInfo = JSON.parse(body)['user']
       req.session.authUser = JSON.parse(body)['access_token']
     }
 
@@ -38,7 +39,20 @@ router.post('/logout', (req, res) => {
       'Authorization': 'Bearer ' + req.body.token
     }}, (error, response, body) => {
     if (!error && response.statusCode === 200) {
-      delete req.session.authUser
+      req.session.authUser = JSON.parse(body)['access_token']
+    }
+
+    res.status(200).json(JSON.parse(body))
+  })
+})
+
+router.post('/token', (req, res) => {
+  request.post({url: `${apiURL}/token`,
+    form: {
+      token: req.body.token
+    }}, (error, response, body) => {
+    if (!error && response.statusCode === 200) {
+      req.session.authUser = JSON.parse(body)['access_token']
     }
 
     res.status(200).json(JSON.parse(body))

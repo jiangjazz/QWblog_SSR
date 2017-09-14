@@ -68,6 +68,7 @@ module.exports = {
   css: [
     'element-ui/lib/theme-default/index.css',
     'github-markdown-css/github-markdown.css',
+    'simplemde-theme-base/dist/simplemde-theme-base.min.css',
     { src: '~assets/sass/qwui_base.scss', lang: 'scss' }
   ],
   babel: {
@@ -78,6 +79,9 @@ module.exports = {
   },
   plugins: ['~plugins/element-ui', {
     src: '~plugins/axios',
+    ssr: false
+  }, {
+    src: '~plugins/markdownEditor',
     ssr: false
   }],
   modules: [
@@ -105,7 +109,6 @@ module.exports = {
     bodyParser.json(),
     // session middleware
     session({
-      store: new RedisStore(redisOptions),
       secret: 'super-secret-key',
       resave: true,
       saveUninitialized: true,

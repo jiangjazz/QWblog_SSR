@@ -30,7 +30,7 @@
     "whatwg-fetch": "^2.0.3"
   },
   "devDependencies": {
-    "@nuxtjs/axios": "^4.2.1",
+    "@nuxtjs/axios": "^4.3.0",
     "@nuxtjs/proxy": "^1.1.2",
     "axios": "^0.16.2",
     "babel-eslint": "^7.2.3",

@@ -79,7 +79,9 @@
           .then(response => {
             if (response.data.status_code === '200') {
               localStorage.setItem('access_token', response.data.access_token)
-              this.loginSuccess = true
+              this.$store.commit('SET_USER', response.data.access_token)
+              this.$store.commit('SET_USERINFO', response.data.user)
+              this.$store.commit('SET_LOGIN', true)
 
               this.$message({
                 message: response.data.message,

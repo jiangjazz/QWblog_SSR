@@ -26,7 +26,7 @@
         </ul>
       </div>
       <div class="m-navbar-user">
-        <a href="javascript:void(0)" class="write-btn" v-on:click="writePosts"><i class="iconfont icon-weibiaoti--"></i> 写文章</a>
+        <a href="/createPosts" class="write-btn"><i class="iconfont icon-weibiaoti--"></i> 写文章</a>
       </div>
     </div>
   </div>
@@ -34,14 +34,7 @@
 
 <script>
   export default {
-    name: 'Navbar',
-    methods: {
-      writePosts () {
-        this.$store.dispatch('isLogin', {
-          url: '/post/create'
-        })
-      }
-    }
+    name: 'Navbar'
   }
 </script>
 

@@ -36,7 +36,8 @@ module.exports = {
       {hid: 'description', name: 'description', content: 'qteam 博客SSR版本'}
     ],
     link: [
-      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
+      {rel: 'stylesheet', href: '//at.alicdn.com/t/font_j9qxmkf2j9u7syvi.css'}
     ]
   },
   /*

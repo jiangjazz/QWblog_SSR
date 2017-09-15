@@ -1,7 +1,7 @@
 <template>
   <div class='m-banner f-cb'>
     <div class='m-banner-bg' id='particles'>
-      <a href='#/apidoc' class='banner-btn'>
+      <a href='/apidoc' class='banner-btn'>
         与世界分享你的知识，经验与见解
       </a>
     </div>

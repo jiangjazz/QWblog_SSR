@@ -43,7 +43,6 @@
       let token = store.state.authUser
       app.$axios.setToken(token, 'Bearer')
       let {user} = await app.$axios.$get('/api/me')
-      console.log(user)
       return {
         ruleForm: user
       }

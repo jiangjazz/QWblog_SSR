@@ -26,7 +26,7 @@
         </ul>
       </div>
       <div class="m-navbar-user">
-        <a href="/createPosts" class="write-btn"><i class="iconfont icon-weibiaoti--"></i> 写文章</a>
+        <a href="/post/create" class="write-btn"><i class="iconfont icon-weibiaoti--"></i> 写文章</a>
       </div>
     </div>
   </div>

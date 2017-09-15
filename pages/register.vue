@@ -30,9 +30,6 @@
         </div>
       </div>
     </div>
-    <div class="login-modal login-success" v-show="registerSuccess">
-      注册成功
-    </div>
   </div>
 </template>
 

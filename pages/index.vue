@@ -1,7 +1,7 @@
 <template>
   <div class="g-box">
     <div class="wrap-left">
-      <Category :cateData="cateData" :activeId="cateData.activeid" :loadingStatus="false"></Category>
+      <Category :cateData="cateData.data" :activeId="cateData.activeid" :loadingStatus="false"></Category>
       <Lists :listData="postData"></Lists>
     </div>
     <div class="warp-right">
@@ -25,7 +25,7 @@ export default {
     let postData = await app.$axios.$get('/api/categories/' + cateData.data[0].id + '/posts')
     cateData.activeid = cateData.data[0].id
     return {
-      cateData: cateData.data,
+      cateData: cateData,
       postData: postData.data
     }
   }

@@ -15,7 +15,7 @@
               </div>
               <div class="description">
                 <h4 class="author-title">
-                  <a :href="'/user/' + item.user.id" target="_blank">{{item.user.name}}</a>
+                  <a :href="'/user/' + item.user.id">{{item.user.name}}</a>
                 </h4>
               </div>
             </div>
@@ -27,7 +27,7 @@
             <a href="#">{{item.title}}</a>
           </div>
           <div class="pi-op" v-if="users && users === $store.state.userInfo.id">
-            <a :href="'#/post/edit/'+item.id">
+            <a :href="'/post/'+item.id">
               <el-button type="info" size="small">编辑</el-button>
             </a>
             <a href="javascript:void(0)" @click="delPost(item.id)">
@@ -89,7 +89,7 @@
         })
       },
       doDelPost (id) {
-        let token = localStorage.getItem('access_token')
+        let token = this.$store.state.authUser
         this.$http({
           method: 'delete',
           url: '/api/posts/' + id,
@@ -103,7 +103,7 @@
                 duration: 500
               })
               this.$nextTick(() => {
-                this.fetchData()
+                window.location.reload()
               })
             } else {
               this.$message({

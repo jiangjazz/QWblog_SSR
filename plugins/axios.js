@@ -7,6 +7,16 @@ axios.defaults.baseURL = 'http://jianshu.dev'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
+axios.interceptors.request.use(config => {
+  const lastURL = config.url
+  if (config.url.indexOf('/exapi') !== -1) {
+    config.url = config.url.replace(config.baseURL, '')
+  } else {
+    config.url = lastURL
+  }
+  return config
+})
+
 axios.interceptors.response.use(response => {
   if (response.data.status_code !== '200') {
     if (response.data.hasOwnProperty('error')) {

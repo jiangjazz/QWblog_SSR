@@ -26,19 +26,15 @@
 
 <script>
   import marked from 'marked'
-  import axios from 'axios'
 
   export default {
     name: 'Details',
     layout: 'details',
-    async asyncData ({ isServer, params }) {
-      if (isServer) {
-        axios.defaults.baseURL = 'http://admin.qteam.cc'
-      }
-      let postData = await axios.get('/api/posts/' + params.id)
-      postData.data.data.content = marked(postData.data.data.content, { sanitize: true })
+    async asyncData ({ isServer, params, app }) {
+      let postData = await app.$axios.$get('/api/posts/' + params.id)
+      postData.data.content = marked(postData.data.content, { sanitize: true })
       return {
-        postData: postData.data.data
+        postData: postData.data
       }
     }
   }

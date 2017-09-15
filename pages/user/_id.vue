@@ -36,7 +36,6 @@
     layout: 'users',
     async asyncData ({ isServer, params, app, store }) {
       let token = store.state.authUser
-      let userinfo = store.state.userInfo
       app.$axios.setToken(token, 'Bearer')
       let user = await app.$axios.$get('/api/users/' + params.id)
       let post = await app.$axios.$get('/api/users/' + params.id + '/posts')

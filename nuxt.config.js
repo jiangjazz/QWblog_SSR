@@ -31,18 +31,18 @@ module.exports = {
   head: {
     title: '前端切图小分队',
     meta: [
-      { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: 'qteam 博客SSR版本' }
+      {charset: 'utf-8'},
+      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
+      {hid: 'description', name: 'description', content: 'qteam 博客SSR版本'}
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'}
     ]
   },
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#FF9933', height: '3px' },
+  loading: {color: '#FF9933', height: '3px'},
   /*
   ** Build configuration
   */
@@ -69,7 +69,7 @@ module.exports = {
     'element-ui/lib/theme-default/index.css',
     'github-markdown-css/github-markdown.css',
     'simplemde-theme-base/dist/simplemde-theme-base.min.css',
-    { src: '~assets/sass/qwui_base.scss', lang: 'scss' }
+    {src: '~assets/sass/qwui_base.scss', lang: 'scss'}
   ],
   babel: {
     plugins: [['component', [{
@@ -104,7 +104,7 @@ module.exports = {
       secret: 'super-secret-key',
       resave: true,
       saveUninitialized: true,
-      cookie: { maxAge: 60000 * 5 * 20 }
+      cookie: {maxAge: 60000 * 5 * 20}
     }),
     // Api middleware
     // We add /api/login & /api/logout routes

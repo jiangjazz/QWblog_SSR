@@ -8,7 +8,7 @@
             <a href="#">你好，{{$store.state.userInfo.name}}</a>
           </li>
           <li>
-            <a href="/user/info"><i class="iconfont icon-yonghu1"></i> 个人主页</a>
+            <a :href="'/user/' + $store.state.userInfo.id"><i class="iconfont icon-yonghu1"></i> 个人主页</a>
           </li>
           <li>
             <a href="#"><i class="iconfont icon-xiaoxitongzhi"></i> 消息通知</a>

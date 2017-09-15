@@ -15,7 +15,7 @@
               </div>
               <div class="description">
                 <h4 class="author-title">
-                  <a :href="'#/u/'+item.user.id" target="_blank">{{item.user.name}}</a>
+                  <a :href="'/user/' + item.user.id" target="_blank">{{item.user.name}}</a>
                 </h4>
               </div>
             </div>
@@ -24,9 +24,9 @@
             </div>
           </div>
           <div class="pi-title">
-            <a href="#">{{item.title}} {{users}}</a>
+            <a href="#">{{item.title}}</a>
           </div>
-          <div class="pi-op" v-if="users === $store.state.userInfo.id">
+          <div class="pi-op" v-if="users && users === $store.state.userInfo.id">
             <a :href="'#/post/edit/'+item.id">
               <el-button type="info" size="small">编辑</el-button>
             </a>
@@ -65,10 +65,10 @@
         this.loading = true
         this.$http.get('/api/categories/' + id + '/posts')
           .then(response => {
-            this.posts = response.data
+            this.posts = response.data.data
             setTimeout(() => {
               this.loading = false
-            }, 1000)
+            }, 500)
           })
           .catch(function (error) {
             console.log(error)

@@ -75,7 +75,7 @@
       loginAc (data) {
         this.btnTxt = '登录中'
         this.btnIsDisable = true
-        this.$http.post('http://localhost:3000/exapi/login', data)
+        this.$http.post('/exapi/login', data)
           .then(response => {
             if (response.data.status_code === '200') {
               localStorage.setItem('access_token', response.data.access_token)

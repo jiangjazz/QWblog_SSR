@@ -44,7 +44,7 @@
       border-radius: 4px;
       font-weight: 400;
       &:hover{
-        background-color: #eee;
+        background-color: #f5f5f5;
         color:#999;
       }
     }

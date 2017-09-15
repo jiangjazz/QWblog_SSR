@@ -24,16 +24,12 @@
       display: block;
       margin-bottom: 6px;
       font-size: 14px;
+      a{
+        &:hover{
+          color:#000;
+          transform: translateX(6px);
+        }
+      }
     }
-  }
-}
-
-.m-side-userinfo{
-  .iconfont{
-    vertical-align: middle;
-    font-size: 18px;
-  }
-  .m-sb-list{
-    font-size: 14px;
   }
 }

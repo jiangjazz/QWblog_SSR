@@ -15,8 +15,7 @@ a{
     //&:hover{
     //    color:darken($base-txt-color,10%);
     //}
-    //&:hover,&:visited,&:focus{
-    //    text-decoration: underline;
-    //    transition:color .2s ease;
-    //}
+    &:hover,&:visited,&:focus{
+        transition:all .2s ease;
+    }
 }

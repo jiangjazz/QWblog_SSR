@@ -22,7 +22,7 @@
           <el-upload
             name="postPic"
             class="avatar-uploader"
-            action="http://jianshu.dev/api/posts/fileupload"
+            action="http://admin.qteam.cc/api/posts/fileupload"
             :show-file-list="false"
             :headers="token"
             :on-success="handleAvatarSuccess"
@@ -143,6 +143,9 @@
           .then(response => {
             if (response.data.status_code === '200') {
               this.$message(response.data.message)
+              this.$nextTick(() => {
+                this.$router.push('/')
+              })
             } else {
               this.$message(response.data.message)
             }

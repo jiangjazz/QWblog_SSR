@@ -103,7 +103,7 @@
                 duration: 500
               })
               this.$nextTick(() => {
-                window.location.reload()
+                this.$router.go(0)
               })
             } else {
               this.$message({

@@ -70,7 +70,8 @@ module.exports = {
     'element-ui/lib/theme-default/index.css',
     'github-markdown-css/github-markdown.css',
     'simplemde-theme-base/dist/simplemde-theme-base.min.css',
-    {src: '~assets/sass/qwui_base.scss', lang: 'scss'}
+    {src: '~assets/sass/qwui_base.scss', lang: 'scss'},
+    {src: '~assets/sass/qwui_ui.scss', lang: 'scss'}
   ],
   babel: {
     plugins: [['component', [{

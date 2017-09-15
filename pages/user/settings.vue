@@ -6,7 +6,7 @@
         <el-upload
           name="avatar"
           class="avatar-uploader"
-          action="http://jianshu.dev/api/users/fileupload"
+          action="http://admin.qteam.cc/api/users/fileupload"
           :show-file-list="false"
           :headers="token"
           :on-success="handleAvatarSuccess"
@@ -105,6 +105,10 @@
                 type: 'success',
                 message: response.data.message
               })
+
+              setTimeout(() => {
+                this.$router.push('/')
+              }, 500)
             } else {
               this.$message(response.data.message)
             }

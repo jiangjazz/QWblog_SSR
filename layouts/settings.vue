@@ -14,11 +14,11 @@
   import Navbar from '~/components/Navbar.vue'
   import Copyright from '~/components/Copyright.vue'
   import Login from '~/components/SideLogin.vue'
-  import SubjectSide from '~/components/SideSubject.vue'
+  import SideFriendlinks from '~/components/SideFriendlinks.vue'
 
   export default {
     components: {
-      Navbar, Copyright, Login, SubjectSide
+      Navbar, Copyright, Login, SideFriendlinks
     }
   }
 </script>

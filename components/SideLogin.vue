@@ -5,7 +5,7 @@
       <div class="m-sb-list">
         <ul>
           <li>
-            <a href="#">你好，{{$store.state.userInfo.name}}</a>
+            你好，{{$store.state.userInfo.name}}
           </li>
           <li>
             <a :href="'/user/' + $store.state.userInfo.id"><i class="iconfont icon-yonghu1"></i> 个人主页</a>

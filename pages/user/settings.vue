@@ -38,7 +38,7 @@
 
   export default {
     name: 'Settings',
-    layout: 'user',
+    layout: 'settings',
     async asyncData ({ isServer, params, app, store }) {
       let token = store.state.authUser
       app.$axios.setToken(token, 'Bearer')

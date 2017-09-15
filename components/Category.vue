@@ -2,7 +2,7 @@
   <div class="m-category">
     <div class="g-box">
       <ul>
-        <li v-for="(item, index) in cateData.data"
+        <li v-for="(item, index) in cateData"
             v-bind:class="{'active':aid === item.id}"
             v-on:click="transCate(item.id)"
         >

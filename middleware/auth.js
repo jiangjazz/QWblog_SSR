@@ -1,8 +1,6 @@
-import axios from 'axios'
-
 export default async ({ isServer, isClient, store, req, app, redirect }) => {
   if (isServer && !req) return
-  app.$axios.defaults.baseURL = 'http://jianshu.dev'
+  app.$axios.defaults.baseURL = 'http://admin.qteam.cc'
   app.$axios.interceptors.response.use(
     undefined,
     (error) => {

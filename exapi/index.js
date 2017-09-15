@@ -5,7 +5,7 @@ const request = require('request')
 const router = express.Router()
 
 // 全局api请求地址
-const apiURL = 'http://jianshu.dev/api'
+const apiURL = 'http://admin.qteam.cc/api'
 
 let app = express()
 router.use((req, res, next) => {

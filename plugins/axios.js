@@ -3,9 +3,9 @@ import * as axios from 'axios'
 
 let token = localStorage.getItem('access_token')
 
-axios.defaults.baseURL = 'http://jianshu.dev'
+axios.defaults.baseURL = 'http://admin.qteam.cc'
 axios.defaults.headers.common['Authorization'] = 'Bearer ' + token
-axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
+axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded'
 
 axios.interceptors.request.use(config => {
   const lastURL = config.url

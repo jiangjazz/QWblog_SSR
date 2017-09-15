@@ -1,7 +1,8 @@
 <template>
   <div class="m-footer f-cb">
     <div class="g-box">
-      <p>Copyright 2017 {{author}} – created by 优雅的laravel && 美妙的Vue.js    备案号：皖ICP备14022073号-4</p>
+      <p>Copyright 2017 – Created by 优雅的<a href="https://laravel.com/">Laravel</a> && 美妙的 <a href="https://cn.vuejs.org/v2/guide/">Vue.js</a> && 强悍的 <a
+        href="https://zh.nuxtjs.org/">Nuxt.js</a>    &nbsp&nbsp备案号：皖ICP备14022073号-4</p>
     </div>
   </div>
 </template>

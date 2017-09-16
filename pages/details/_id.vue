@@ -10,10 +10,10 @@
       <div class="post-content markdown-body" v-html="postData.content">
       </div>
       <div class="post-tags">
-        <ul>
-          <li>标签:</li>
-          <li v-for="item in postData.tags">#{{item.name}}</li>
-        </ul>
+        <img src="~/assets/images/tags.png" alt="" class="post-tags-img">
+        <span class="post-tags-link">
+          <a :href="`/tags/${item.id}`" v-for="item in postData.tags">{{item.name}}</a>
+        </span>
       </div>
     </div>
 
@@ -83,6 +83,23 @@
     }
     .post-comment{
       margin-top: 20px;
+    }
+    .post-tags-img{
+      width: 43px;
+      height: 19px;
+    }
+    .post-tags-link{
+      display: inline-block;
+      vertical-align: 4px;
+      margin-left: 5px;
+      a{
+        color: #3993bf;
+        display: inline-block;
+        height: 19px;
+        line-height: 19px;
+        font-size: 14px;
+        margin-right: 10px;
+      }
     }
   }
 </style>

@@ -6,7 +6,7 @@
             v-bind:class="{'active':aid === item.id}"
             v-on:click="transCate(item.id)"
         >
-          <a href="javascript:void(0)">{{ item.name }}</a>
+          {{ item.name }}
         </li>
       </ul>
     </div>
@@ -59,21 +59,26 @@
     }
     li{
       display: inline-block;
-      padding: 0 10px;
-      font-size: 16px;
-      margin: 10px 14px 10px 0;
-      height: 30px;
-      line-height: 30px;
-      &.active {
+      margin-right: 15px;
+      font-size: 14px;
+      height: 32px;
+      width: 90px;
+      line-height: 32px;
+      text-align: center;
+      background-color: #fff;
+      border-radius: 3px;
+      border: 1px solid #dbdbdb;
+      color:#666;
+      cursor: pointer;
+      &:hover{
+        color: #333;
+        border: 1px solid #549ae2;
+      }
+      &.active{
         background: #549ae2;
         font-weight: 400;
-        a {
-          color: #fff;
-          cursor: default;
-          &:hover{
-            color: #fff
-          }
-        }
+        color: #fff;
+        cursor: default;
       }
     }
   }

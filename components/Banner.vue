@@ -48,5 +48,13 @@
         color:#999;
       }
     }
+    @media (max-width: 1023px) {
+      height: 230px;
+      .banner-btn{
+        width:80%;
+        font-size: 14px;
+        border:none;
+      }
+    }
   }
 </style>

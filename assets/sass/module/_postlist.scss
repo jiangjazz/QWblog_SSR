@@ -6,9 +6,9 @@
     float: left;
     overflow: hidden;
     width: 280px;
-    height:268px;
     margin: 0 30px 20px 0;
     background-color: #fff;
+    padding-bottom: 10px;
     &:hover{
       .pi-thumbils{
         img{
@@ -73,7 +73,7 @@
     width: 100%;
     float: left;
     font-weight: 500;
-    margin-top: 10px;
+    margin-top: 6px;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
@@ -81,5 +81,29 @@
   }
   .pi-op{
     padding:0 10px 10px 10px;
+    a{
+      margin-right: 6px;
+      margin-top: 6px;
+    }
+  }
+
+  @media (max-width: 1023px){
+    .item{
+      width:100%;
+      height:auto;
+      padding-bottom: 10px;
+      .pi-thumbils{
+        height: auto;
+        a{
+          display: block;
+        }
+        img{
+          display: block;
+          width:100%;
+          height:auto;
+          transition: transform ease .5s;
+        }
+      }
+    }
   }
 }

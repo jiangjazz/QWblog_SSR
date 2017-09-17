@@ -5,7 +5,7 @@
       <li class="item" v-for="(item, index) in posts" v-bind:key="item.id" v-else>
         <div class="post-item">
           <div class="pi-thumbils">
-            <a :href="'/details/'+item.id" target="_blank"><img :src="item.imageUrl" :alt="item.title"></a>
+            <a :href="'/details/'+item.id"><img :src="item.imageUrl" :alt="item.title"></a>
           </div>
           <div class="pi-title">
             {{item.title}}

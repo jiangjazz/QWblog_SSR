@@ -32,12 +32,12 @@ module.exports = {
     title: '前端切图小分队',
     meta: [
       {charset: 'utf-8'},
-      {name: 'viewport', content: 'width=device-width, initial-scale=1'},
-      {hid: 'description', name: 'description', content: 'qteam 博客SSR版本'}
+      {name: 'viewport', content: 'width=device-width, initial-scale=1,maximum-scale=1,user-scalable=no'},
+      {hid: 'description', name: 'description', content: '切图小分队的自留地，与世界分享你的知识，经验与见解'}
     ],
     link: [
       {rel: 'icon', type: 'image/x-icon', href: '/favicon.ico'},
-      {rel: 'stylesheet', href: '//at.alicdn.com/t/font_j9qxmkf2j9u7syvi.css'}
+      {rel: 'stylesheet', href: '//at.alicdn.com/t/font_356377_e8tgty4vqovwjyvi.css'}
     ]
   },
   /*

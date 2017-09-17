@@ -26,15 +26,3 @@
     }
   }
 </script>
-
-<style lang="scss">
-  .wrap-left{
-    width:960px;
-    float: left;
-  }
-
-  .warp-right{
-    width:240px;
-    float: right;
-  }
-</style>

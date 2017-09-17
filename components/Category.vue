@@ -1,15 +1,13 @@
 <template>
   <div class="m-category">
-    <div class="g-box">
-      <ul>
-        <li v-for="(item, index) in cateData"
-            v-bind:class="{'active':aid === item.id}"
-            v-on:click="transCate(item.id)"
-        >
-          {{ item.name }}
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <li v-for="(item, index) in cateData"
+          v-bind:class="{'active':aid === item.id}"
+          v-on:click="transCate(item.id)"
+      >
+        {{ item.name }}
+      </li>
+    </ul>
   </div>
 </template>
 
@@ -79,6 +77,14 @@
         font-weight: 400;
         color: #fff;
         cursor: default;
+      }
+    }
+    @media (max-width: 1023px){
+      margin-top: 10px;
+      margin-bottom: 10px;
+      height:40px;
+      ul{
+        float: none;
       }
     }
   }

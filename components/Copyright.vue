@@ -33,5 +33,13 @@
     p{
       line-height: 48px;
     }
+    @media (max-width: 1023px){
+      padding: 10px 50px;
+      height: auto;
+      text-align: center;
+      p{
+        line-height: 1.5;
+      }
+    }
   }
 </style>

@@ -5,13 +5,15 @@
       <li class="item" v-for="(item, index) in posts" v-bind:key="item.id" v-else>
         <div class="post-item">
           <div class="pi-thumbils">
-            <a :href="'/details/'+item.id" target="_blank"><img :src="item.imageUrl" alt=""></a>
+            <a :href="'/details/'+item.id" target="_blank"><img :src="item.imageUrl" :alt="item.title"></a>
+          </div>
+          <div class="pi-title">
+            {{item.title}}
           </div>
           <div class="pi-info">
             <div class="pi-info-user">
               <div class="avatar-img ">
-                <a href="#" target="_blank"><img width="150" height="150" :src="item.user.avatar" class=""
-                                                 alt="avatar"></a>
+                <a href="#" target="_blank"><img width="20" height="20" :src="item.user.avatar"></a>
               </div>
               <div class="description">
                 <h4 class="author-title">
@@ -19,12 +21,6 @@
                 </h4>
               </div>
             </div>
-            <div class="category">
-              <a href="#">{{item.category.name}}</a>
-            </div>
-          </div>
-          <div class="pi-title">
-            <a href="#">{{item.title}}</a>
           </div>
           <div class="pi-op" v-if="users && users === $store.state.userInfo.id">
             <a :href="'/post/'+item.id">
@@ -117,73 +113,3 @@
     }
   }
 </script>
-
-<style scoped lang="scss">
-  .m-postlist{
-    .item{
-      float: left;
-      overflow: hidden;
-      width: 280px;
-      margin: 0 30px 20px 0;
-      background-color: #fff;
-    }
-    .pi-thumbils{
-      height:180px;
-    }
-    .post-item{
-      img{
-        width:100%;
-        height:180px;
-      }
-    }
-    .pi-info{
-      float: left;
-      width: 100%;
-      line-height: 27px;
-      background: #fff;
-      padding: 12px 10px 0 12px;
-      font-size: 13px;
-    }
-    .pi-info-user{
-      float: left;
-      .avatar-img{
-        display: table-cell;
-        overflow: hidden;
-        img{
-          border-radius: 50%;
-          width: 24px;
-          height: 24px;
-          margin: 0;
-          vertical-align: middle;
-        }
-      }
-      .description{
-        padding-left: 5px;
-        overflow: hidden;
-        display: table-cell;
-      }
-    }
-    .category{
-      float: right;
-    }
-    .pi-title{
-      width: 100%;
-      float: left;
-      font-weight: 500;
-      margin-top: 6px;
-      height:52px;
-      overflow: hidden;
-      padding:0 10px;
-    }
-    .pi-op{
-      padding:0 10px 10px 10px;
-    }
-  }
-
-  .fade-enter-active, .fade-leave-active {
-    transition: opacity .2s
-  }
-  .fade-enter, .fade-leave-to /* .fade-leave-active in <2.1.8 */ {
-    opacity: 0
-  }
-</style>

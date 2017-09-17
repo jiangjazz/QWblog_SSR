@@ -64,12 +64,13 @@ module.exports = {
         })
       }
     },
-    vendor: ['particles.js', 'axios', 'element-ui']
+    vendor: ['particles.js', 'axios', 'element-ui', 'gitalk']
   },
   css: [
     'element-ui/lib/theme-default/index.css',
     'github-markdown-css/github-markdown.css',
     'simplemde-theme-base/dist/simplemde-theme-base.min.css',
+    'gitalk/dist/gitalk.css',
     {src: '~assets/sass/qwui_base.scss', lang: 'scss'},
     {src: '~assets/sass/qwui_ui.scss', lang: 'scss'}
   ],

@@ -7,7 +7,7 @@
         </div>
       </div>
       <div class="login-bd">
-        <el-form :model="ruleForm" :rules="rules" ref="ruleForm">
+        <el-form :model="ruleForm" :rules="rules" ref="ruleForm" @keyup.enter.native="validateBeforeSubmit('ruleForm')">
           <el-form-item prop="name">
             <el-input v-model="ruleForm.name" placeholder="请输入用户名"></el-input>
           </el-form-item>

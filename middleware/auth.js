@@ -1,7 +1,6 @@
-import utils from '~/plugins/utils'
-export default async ({ isServer, isClient, store, req, app, redirect }) => {
+export default async ({ isServer, isClient, store, req, app, redirect, env }) => {
   if (isServer && !req) return
-  app.$axios.defaults.baseURL = utils.baseURL
+  app.$axios.defaults.baseURL = env.baseUrl
   app.$axios.interceptors.response.use(
     undefined,
     (error) => {

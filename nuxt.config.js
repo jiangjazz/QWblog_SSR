@@ -66,6 +66,9 @@ module.exports = {
     },
     vendor: ['particles.js', 'axios', 'element-ui', 'gitalk']
   },
+  env: {
+    baseUrl: process.env.BASE_URL || 'http://admin.qteam.cc'
+  },
   css: [
     'element-ui/lib/theme-default/index.css',
     'github-markdown-css/github-markdown.css',

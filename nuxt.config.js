@@ -64,7 +64,7 @@ module.exports = {
         })
       }
     },
-    vendor: ['particles.js', 'axios', 'element-ui', 'gitalk']
+    vendor: ['particles.js', 'axios', 'element-ui', 'gitalk', 'highlight.js']
   },
   env: {
     baseUrl: process.env.BASE_URL || 'http://admin.qteam.cc'
@@ -75,7 +75,8 @@ module.exports = {
     'simplemde-theme-base/dist/simplemde-theme-base.min.css',
     'gitalk/dist/gitalk.css',
     {src: '~assets/sass/qwui_base.scss', lang: 'scss'},
-    {src: '~assets/sass/qwui_ui.scss', lang: 'scss'}
+    {src: '~assets/sass/qwui_ui.scss', lang: 'scss'},
+    'highlight.js/styles/arta.css'
   ],
   babel: {
     plugins: [['component', [{
@@ -83,7 +84,7 @@ module.exports = {
       styleLibraryName: 'theme-default'
     }]]]
   },
-  plugins: ['~plugins/element-ui', {
+  plugins: ['~plugins/element-ui', '~plugins/directive.js', {
     src: '~plugins/axios',
     ssr: false
   }, {

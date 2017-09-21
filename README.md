@@ -1,22 +1,19 @@
-# qblog_ssr
+# Qteam_blog by Nuxt.js
 
-> qteam 博客SSR版本
+> Qteam博客 SSR版本
 
-## Build Setup
+## 运行步骤
 
 ``` bash
-# install dependencies
+# 安装依赖
 $ npm install # Or yarn install
 
-# serve with hot reload at localhost:3000
+# 以开发模式运行，默认监听3000端口，支持热加载
 $ npm run dev
 
-# build for production and launch server
+# 打包发布，运行
 $ npm run build
 $ npm start
-
-# generate static project
-$ npm run generate
 ```
 
-For detailed explanation on how things work, checkout the [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
+如遇到更多问题，请查看Nuxt.js官方文档 [Nuxt.js docs](https://github.com/nuxt/nuxt.js).
